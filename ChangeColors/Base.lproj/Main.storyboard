@@ -34,40 +34,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Do8-EG-Ncs">
-                                <rect key="frame" x="79" y="230" width="37" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="37" id="BQL-e4-em0"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blue:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aw9-Tg-AW6">
+                                <rect key="frame" x="20" y="280" width="51" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="54r-RP-exg">
-                                <rect key="frame" x="122" y="176" width="172" height="31"/>
-                                <connections>
-                                    <action selector="redColorSliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="s9T-6z-bhV"/>
-                                </connections>
-                            </slider>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" text="0.00" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VIF-ix-gMf">
-                                <rect key="frame" x="300" y="175" width="55" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" keyboardAppearance="alert"/>
-                            </textField>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="3cE-kH-Jpv">
-                                <rect key="frame" x="122" y="226" width="172" height="31"/>
-                                <connections>
-                                    <action selector="blueColorSliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="Ga1-64-9Gc"/>
-                                    <action selector="greenColorSliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="cy1-hp-FST"/>
-                                </connections>
-                            </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="bq8-wj-u80">
-                                <rect key="frame" x="122" y="276" width="172" height="31"/>
-                                <connections>
-                                    <action selector="blueColorSliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="B2e-EX-rGE"/>
-                                </connections>
-                            </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfw-EC-FTk">
                                 <rect key="frame" x="81" y="180" width="35" height="21"/>
                                 <constraints>
@@ -77,20 +49,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" text="0.00" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JvL-m4-pFS">
-                                <rect key="frame" x="300" y="225" width="55" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" keyboardAppearance="alert"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" text="0.00" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wHI-Fs-EAb">
-                                <rect key="frame" x="300" y="275" width="55" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" keyboardAppearance="alert"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aw9-Tg-AW6">
-                                <rect key="frame" x="20" y="280" width="51" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Do8-EG-Ncs">
+                                <rect key="frame" x="79" y="230" width="37" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="37" id="BQL-e4-em0"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -104,6 +67,42 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="54r-RP-exg">
+                                <rect key="frame" x="122" y="176" width="172" height="31"/>
+                                <connections>
+                                    <action selector="rgbSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="xd6-ni-CPH"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="3cE-kH-Jpv">
+                                <rect key="frame" x="122" y="226" width="172" height="31"/>
+                                <connections>
+                                    <action selector="rgbSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="hty-Jz-gLA"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="bq8-wj-u80">
+                                <rect key="frame" x="122" y="276" width="172" height="31"/>
+                                <connections>
+                                    <action selector="rgbSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="aYm-Pz-x3m"/>
+                                </connections>
+                            </slider>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" text="0.00" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VIF-ix-gMf">
+                                <rect key="frame" x="300" y="175" width="55" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" keyboardAppearance="alert"/>
+                            </textField>
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" text="0.00" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JvL-m4-pFS">
+                                <rect key="frame" x="300" y="225" width="55" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" keyboardAppearance="alert"/>
+                            </textField>
+                            <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" text="0.00" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wHI-Fs-EAb">
+                                <rect key="frame" x="300" y="275" width="55" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" keyboardAppearance="alert"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -149,16 +148,16 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="blueColorLabel" destination="ldB-b0-ROR" id="Kv8-wi-JCJ"/>
-                        <outlet property="blueColorSlider" destination="bq8-wj-u80" id="Lrg-LG-Ikl"/>
-                        <outlet property="blueColorTextField" destination="wHI-Fs-EAb" id="V9H-Ib-DLR"/>
-                        <outlet property="greenColorLabel" destination="Do8-EG-Ncs" id="OJC-We-aEK"/>
-                        <outlet property="greenColorSlider" destination="3cE-kH-Jpv" id="qQf-yn-wkn"/>
-                        <outlet property="greenColorTextField" destination="JvL-m4-pFS" id="aqN-dQ-xTH"/>
-                        <outlet property="redColorLabel" destination="dfw-EC-FTk" id="hfB-Q8-Dg8"/>
-                        <outlet property="redColorSlider" destination="54r-RP-exg" id="fTQ-z0-Unn"/>
-                        <outlet property="redColorTextField" destination="VIF-ix-gMf" id="cOA-YM-ZKO"/>
-                        <outlet property="viewLabel" destination="U9K-1h-IeM" id="RIq-ow-HE0"/>
+                        <outlet property="blueColorLabel" destination="ldB-b0-ROR" id="3DH-2f-WNH"/>
+                        <outlet property="blueColorSlider" destination="bq8-wj-u80" id="17t-9t-xa8"/>
+                        <outlet property="blueColorTextField" destination="wHI-Fs-EAb" id="Ksf-Zp-kde"/>
+                        <outlet property="greenColorLabel" destination="Do8-EG-Ncs" id="f1D-Rj-gs0"/>
+                        <outlet property="greenColorSlider" destination="3cE-kH-Jpv" id="Qmc-LO-gSn"/>
+                        <outlet property="greenColorTextField" destination="JvL-m4-pFS" id="WZn-Vw-zld"/>
+                        <outlet property="redColorLabel" destination="dfw-EC-FTk" id="EBJ-2F-M2G"/>
+                        <outlet property="redColorSlider" destination="54r-RP-exg" id="oNe-zd-yyK"/>
+                        <outlet property="redColorTextField" destination="VIF-ix-gMf" id="qhs-RH-U4D"/>
+                        <outlet property="viewLabel" destination="U9K-1h-IeM" id="YJT-JA-ymd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

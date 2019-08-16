@@ -8,8 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
-
+class ViewController: UIViewController {
+    
     @IBOutlet var viewLabel: UIView!
     
     @IBOutlet var redColorLabel: UILabel!
@@ -24,121 +24,139 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var greenColorTextField: UITextField!
     @IBOutlet var blueColorTextField: UITextField!
     
-    var redColor: CGFloat = 0
-    var greenColor: CGFloat = 0
-    var blueColor: CGFloat = 0
-    let alpha: CGFloat = 1
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.redColorTextField.delegate = self
-        self.greenColorTextField.delegate = self
-        self.blueColorTextField.delegate = self
+        viewLabel.layer.cornerRadius = 15
         
-        self.addDoneButtonOnKeyboard()
+        redColorSlider.tintColor = .red
+        greenColorSlider.tintColor = .green
         
-        viewLabel.layer.cornerRadius = 10
+        setColor()
+        setValueForLabel()
+        setValueForTextField()
         
-        //Setup sliders
-        redColorSlider.value = 0
-        redColorSlider.minimumTrackTintColor = .red
-        greenColorSlider.value = 0
-        greenColorSlider.minimumTrackTintColor = .green
-        blueColorSlider.value = 0
-        blueColorSlider.minimumTrackTintColor = .blue
-        
-        redColorLabel.text = String(redColorSlider.value)
-        greenColorLabel.text = String(greenColorSlider.value)
-        blueColorLabel.text = String(blueColorSlider.value)
-        
-        redColorTextField.text = String(redColorSlider.value)
-        greenColorTextField.text = String(greenColorSlider.value)
-        blueColorTextField.text = String(blueColorSlider.value)
+        addDoneButtonTo(redColorTextField)
+        addDoneButtonTo(greenColorTextField)
+        addDoneButtonTo(blueColorTextField)
     }
     
-    func addDoneButtonOnKeyboard(){
-        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
-        doneToolbar.barStyle = .default
-        doneToolbar.barTintColor = .gray
+    // Изменение цветов слайдерами
+    @IBAction func rgbSlider(_ sender: UISlider) {
         
-        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.doneButtonAction))
-        
-        let items = [flexSpace, done]
-        doneToolbar.items = items
-        doneToolbar.sizeToFit()
-        
-        redColorTextField.inputAccessoryView = doneToolbar
-        greenColorTextField.inputAccessoryView = doneToolbar
-        blueColorTextField.inputAccessoryView = doneToolbar
+        switch sender.tag {
+        case 0:
+            redColorLabel.text = string(from: sender)
+            redColorTextField.text = string(from: sender)
+        case 1:
+            greenColorLabel.text = string(from: sender)
+            greenColorTextField.text = string(from: sender)
+        case 2:
+            blueColorLabel.text = string(from: sender)
+            blueColorTextField.text = string(from: sender)
+        default:
+            break
+        }
+        setColor()
     }
     
-    @objc func doneButtonAction(){
-        redColorTextField.resignFirstResponder()
-        greenColorTextField.resignFirstResponder()
-        blueColorTextField.resignFirstResponder()
-        
-        if let _ = Float(redColorTextField.text!) {
-            redColor = CGFloat(Float(redColorTextField.text!)!)
-            redColorSlider.value = Float(redColor)
-            redColorLabel.text = String(Float(redColor))
-        } else {
-            print("Wrong format")
-        }
-        
-        if let _ = Float(greenColorTextField.text!) {
-            greenColor = CGFloat(Float(greenColorTextField.text!)!)
-            greenColorSlider.value = Float(greenColor)
-            greenColorLabel.text = String(Float(greenColor))
-        } else {
-            print("Wrong format")
-        }
-        
-        if let _ = Float(blueColorTextField.text!) {
-            blueColor = CGFloat(Float(blueColorTextField.text!)!)
-            blueColorSlider.value = Float(blueColor)
-            blueColorLabel.text = String(Float(blueColor))
-        } else {
-            print("Wrong format")
-        }
-        
-        viewLabel.backgroundColor = UIColor.init(red: redColor,
-                                                 green: greenColor,
-                                                 blue: blueColor,
-                                                 alpha: alpha)
+    // Цвет вью
+    private func setColor() {
+        viewLabel.backgroundColor = UIColor(red: CGFloat(redColorSlider.value),
+                                            green: CGFloat(greenColorSlider.value),
+                                            blue: CGFloat(blueColorSlider.value),
+                                            alpha: 1)
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
+    private func setValueForLabel() {
+        redColorLabel.text = string(from: redColorSlider)
+        greenColorLabel.text = string(from: greenColorSlider)
+        blueColorLabel.text = string(from: blueColorSlider)
     }
-
-    @IBAction func redColorSliderAction() {
-        redColor = CGFloat(redColorSlider.value)
-        viewLabel.backgroundColor = UIColor.init(red: redColor,
-                                                 green: greenColor,
-                                                 blue: blueColor,
-                                                 alpha: alpha)
-        redColorLabel.text = String(format: "%.2f", redColorSlider.value)
-        redColorTextField.text = String(format: "%.2f", redColorSlider.value)
+    
+    private func setValueForTextField() {
+        redColorTextField.text = string(from: redColorSlider)
+        greenColorTextField.text = string(from: greenColorSlider)
+        blueColorTextField.text = string(from: blueColorSlider)
     }
-    @IBAction func greenColorSliderAction() {
-        greenColor = CGFloat(greenColorSlider.value)
-        viewLabel.backgroundColor = UIColor.init(red: redColor,
-                                                 green: greenColor,
-                                                 blue: blueColor,
-                                                 alpha: alpha)
-        greenColorLabel.text = String(format: "%.2f", greenColorSlider.value)
-        greenColorTextField.text = String(format: "%.2f", greenColorSlider.value)
-    }
-    @IBAction func blueColorSliderAction() {
-        blueColor = CGFloat(blueColorSlider.value)
-        viewLabel.backgroundColor = UIColor.init(red: redColor,
-                                                 green: greenColor,
-                                                 blue: blueColor,
-                                                 alpha: alpha)
-        blueColorLabel.text = String(format: "%.2f", blueColorSlider.value)
-        blueColorTextField.text = String(format: "%.2f", blueColorSlider.value)
+    
+    // Значения RGB
+    private func string(from slider: UISlider) -> String {
+        return String(format: "%.2f", slider.value)
     }
 }
 
+extension ViewController: UITextFieldDelegate {
+    
+    // Скрываем клавиатуру нажатием на "Done"
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    // Скрытие клавиатуры по тапу за пределами Text View
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        
+        // Скрывает клавиатуру, вызванную для любого объекта
+        view.endEditing(true)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        guard let text = textField.text else { return }
+        
+        if let currentValue = Float(text) {
+            
+            switch textField.tag {
+            case 0: redColorSlider.value = currentValue
+            case 1: greenColorSlider.value = currentValue
+            case 2: blueColorSlider.value = currentValue
+            default: break
+            }
+            
+            setColor()
+            setValueForLabel()
+        } else {
+            showAlert(title: "Wrong format!",
+                      message: "Please enter correct value")
+        }
+    }
+}
+
+extension ViewController {
+    
+    // Метод для отображения кнопки "Готово" на цифровой клавиатуре
+    private func addDoneButtonTo(_ textField: UITextField) {
+        
+        let keyboardToolbar = UIToolbar()
+        textField.inputAccessoryView = keyboardToolbar
+        keyboardToolbar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title:"Done",
+                                         style: .done,
+                                         target: self,
+                                         action: #selector(didTapDone))
+        
+        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
+                                            target: nil,
+                                            action: nil)
+        
+        
+        
+        keyboardToolbar.items = [flexBarButton, doneButton]
+    }
+    
+    @objc private func didTapDone() {
+        view.endEditing(true)
+    }
+    
+    private func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title,
+                                      message: message,
+                                      preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+}
